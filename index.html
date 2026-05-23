@@ -6,7 +6,6 @@
 
   <title>株式会社潮田 | 日本のモノづくりを、裏側から。</title>
 
-  <!-- フォント -->
   <style>
 
     *{
@@ -20,6 +19,10 @@
       line-height:1.8;
       background:#fffaf5;
       color:#444;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     a{
@@ -57,14 +60,54 @@
     }
 
     /* ======================
+       HEADER
+    ====================== */
+
+    .header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      background:#fff;
+      padding:15px 5%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:999;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:bold;
+      color:#ff7a00;
+    }
+
+    .nav-menu{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    .nav-menu a{
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .nav-menu a:hover{
+      color:#ff7a00;
+    }
+
+    /* ======================
        HERO
     ====================== */
 
     .hero{
       position:relative;
       height:100vh;
+
       background:
-      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      linear-gradient(rgba(255,122,0,0.35), rgba(0,0,0,0.35)),
       url("会社写真.jpg") center/cover no-repeat;
 
       display:flex;
@@ -268,6 +311,17 @@
 
     @media(max-width:900px){
 
+      .header{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+      }
+
       section{
         padding:70px 0;
       }
@@ -303,6 +357,29 @@
 </head>
 
 <body>
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <div class="logo">
+      株式会社潮田
+    </div>
+
+    <nav>
+
+      <ul class="nav-menu">
+
+        <li><a href="#company">会社概要</a></li>
+        <li><a href="#service">事業内容</a></li>
+        <li><a href="#strength">強み</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+
+      </ul>
+
+    </nav>
+
+  </header>
 
   <!-- HERO -->
 
@@ -346,6 +423,11 @@
             <tr>
               <th>会社名</th>
               <td>株式会社潮田</td>
+            </tr>
+
+            <tr>
+              <th>旧会社名</th>
+              <td>有限会社岩手ボルト産業</td>
             </tr>
 
             <tr>
@@ -424,6 +506,8 @@
 
       <div class="service-grid">
 
+        <!-- 建築資材 -->
+
         <div class="service-card">
 
           <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="建築資材">
@@ -441,9 +525,11 @@
 
         </div>
 
+        <!-- 電動ドライバー -->
+
         <div class="service-card">
 
-          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="工具">
+          <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=1200&auto=format&fit=crop" alt="電動ドライバー">
 
           <div class="service-content">
 
@@ -458,9 +544,11 @@
 
         </div>
 
+        <!-- 現場用品 -->
+
         <div class="service-card">
 
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="土木資材">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="現場用品">
 
           <div class="service-content">
 
@@ -483,7 +571,7 @@
 
   <!-- STRENGTH -->
 
-  <section class="strength">
+  <section id="strength" class="strength">
 
     <div class="container">
 
